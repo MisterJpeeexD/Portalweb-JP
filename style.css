@@ -1,0 +1,24 @@
+<section class="section-left">
+    <h3 class="title-left">HABILIDADES</h3>
+    
+    <div class="skill-item">
+        <span class="skill-name">Java & Backend</span>
+        <div class="progress-bar">
+            <div class="progress-fill level-25"></div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        <span class="skill-name">JavaScript & DOM</span>
+        <div class="progress-bar">
+            <div class="progress-fill level-50"></div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        <span class="skill-name">Networking & Infraestructura</span>
+        <div class="progress-bar">
+            <div class="progress-fill level-75"></div>
+        </div>
+    </div>
+</section>
