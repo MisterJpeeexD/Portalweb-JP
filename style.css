@@ -1,24 +1,164 @@
-<section class="section-left">
-    <h3 class="title-left">HABILIDADES</h3>
-    
-    <div class="skill-item">
-        <span class="skill-name">Java & Backend</span>
-        <div class="progress-bar">
-            <div class="progress-fill level-25"></div>
-        </div>
-    </div>
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+:root {
+    --bg-dark-blue: #1e2a38;     /* Azul oscuro de la columna izquierda */
+    --text-white: #ffffff;
+    --text-gray: #666666;
+    --text-light-gray: #a0a0a0;
+    --accent-yellow: #f1c40f;    /* Amarillo para barras y badges */
+    --bg-light: #f8f9fa;         /* Fondo de la columna derecha */
+    --border-color: #e0e0e0;
+}
 
-    <div class="skill-item">
-        <span class="skill-name">JavaScript & DOM</span>
-        <div class="progress-bar">
-            <div class="progress-fill level-50"></div>
-        </div>
-    </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <div class="skill-item">
-        <span class="skill-name">Networking & Infraestructura</span>
-        <div class="progress-bar">
-            <div class="progress-fill level-75"></div>
-        </div>
-    </div>
-</section>
+body {
+    background-color: #dcdde1; /* Fondo gris detrás del CV */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. CONTENEDOR PRINCIPAL (GRID DE 2 COLUMNAS)
+   ========================================================================== */
+.cv-container {
+    background-color: var(--text-white);
+    width: 100%;
+    max-width: 900px;
+    min-height: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1/3 para izquierda, 2/3 para derecha */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   3. COLUMNA IZQUIERDA (ASIDE)
+   ========================================================================== */
+.left-column {
+    background-color: var(--bg-dark-blue);
+    color: var(--text-white);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Foto de Perfil y QR Superpuesto */
+.profile-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 12px solid #2c3e50; /* Marco azul grueso */
+    background-color: #ccc;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.qr-code {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 75px;
+    height: 75px;
+    background-color: var(--text-white);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Contenedor general */
+.skills-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgb(40, 52, 66);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Fila de cada habilidad */
+.skill-item {
+    display: flex;
+    flex-direction: column; /* Coloca el nombre arriba y la barra abajo */
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* CONFIGURACIÓN GRÁFICA DE LA BARRA (El contenedor "vacio") */
+.progress-bar {
+    width: 100%;
+    height: 12px; /* Grosor de la barra */
+    background-color: #e0e0e0; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Corta el relleno si se sale de los bordes */
+}
+
+/* El relleno gráfico interno */
+.progress-fill {
+    height: 100%;
+    background-color: rgb(127, 0, 0); /* Color base rojo institucional */
+    border-radius: 10px 0 0 10px;
+    transition: width 0.5s ease-in-out; /* Animación de carga */
+}
+
+/* Clases específicas para controlar los 5 anchos gráficos */
+.level-0   { 
+    width: 0%; 
+    border-radius: 10px; /* Redondea ambos lados al estar llena */
+    background: linear-gradient(90deg, rgb(50,0,0) 0%, rgb(255,0,0) 100%); /* Efecto degradado premium */
+}
+.level-25  {     
+    width: 25%; 
+    border-radius: 10px; /* Redondea ambos lados al estar llena */
+    background: linear-gradient(90deg, rgb(50,0,0) 0%, rgb(255,0,0) 100%); /* Efecto degradado premium */
+}
+
+.level-50  {     
+    width: 50%; 
+    border-radius: 10px; /* Redondea ambos lados al estar llena */
+    background: linear-gradient(90deg, rgb(50,0,0) 0%, rgb(255,0,0) 100%); /* Efecto degradado premium */
+}
+.level-75  {
+    width: 75%; 
+    border-radius: 10px; /* Redondea ambos lados al estar llena */
+    background: linear-gradient(90deg, rgb(50,0,0) 0%, rgb(255,0,0) 100%); /* Efecto degradado premium */
+}
+.level-100 { 
+    width: 100%; 
+    border-radius: 10px; /* Redondea ambos lados al estar llena */
+    background: linear-gradient(90deg, rgb(50,0,0) 0%, rgb(255,0,0) 100%); /* Efecto degradado premium */
+}
+
+#instagram{
+    margin-bottom: 10px;
+}
+
+.Linkandgit{
+    display: flex;
+    justify-content: center;
+}
